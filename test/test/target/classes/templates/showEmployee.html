@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>雇员展示</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+     <style type="text/css"> 
+             tr:nth-child(2n){
+                 background:#808080;
+             }
+             #firstrow{
+             	background:#44BB8C;
+             }
+             caption{
+			    font-weight: bold;
+			    font-size: large;
+			    margin: 10px;
+             }
+             
+     </style>  
+</head>
+<body>
+	<table width="400" border="0" cellspacing="0" cellpadding="2" style="margin:auto">
+		<caption>雇员信息</caption>
+		
+		<tr id="firstrow"><td>用户编号</td><td>用户姓名</td><td>城市</td></tr>
+		<tr th:each="user:${employees}">
+			<td th:text="${user.id}"/>
+			<td th:text="${user.name}"/>
+			<td th:text="${user.city}"/>
+		</tr>
+	</table>
+</body>
+</html>
